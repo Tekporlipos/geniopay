@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:geniopay/widgets/NavButton.dart';
-import 'package:geniopay/widgets/NavCustomPainter.dart';
+import 'package:geniopay/widgets/customeNavBar/NavButton.dart';
+import 'package:geniopay/widgets/customeNavBar/NavCustomPainter.dart';
 
-typedef _LetIndexPage = bool Function(int value);
+typedef LetIndexPage = bool Function(int value);
 
 class CurvedNavigationBar extends StatefulWidget {
   final List<Widget> items;
@@ -11,7 +11,7 @@ class CurvedNavigationBar extends StatefulWidget {
   final Color? buttonBackgroundColor;
   final Color backgroundColor;
   final ValueChanged<int>? onTap;
-  final _LetIndexPage letIndexChange;
+  final LetIndexPage letIndexChange;
   final Curve animationCurve;
   final Duration animationDuration;
   final double height;
@@ -20,17 +20,16 @@ class CurvedNavigationBar extends StatefulWidget {
     Key? key,
     required this.items,
     this.index = 0,
-    this.color = Colors.blue,
+    this.color = Colors.white,
     this.buttonBackgroundColor,
     this.backgroundColor = Colors.red,
     this.onTap,
-    _LetIndexPage? letIndexChange,
+    LetIndexPage? letIndexChange,
     this.animationCurve = Curves.easeOut,
     this.animationDuration = const Duration(milliseconds: 600),
     this.height = 75.0,
   })  : letIndexChange = letIndexChange ?? ((_) => true),
-        assert(items != null),
-        assert(items.length >= 1),
+        assert(items.isNotEmpty),
         assert(0 <= index && index < items.length),
         assert(0 <= height && height <= 75.0),
         super(key: key);
@@ -102,32 +101,33 @@ class CurvedNavigationBarState extends State<CurvedNavigationBar>
         clipBehavior: Clip.none,
         alignment: Alignment.bottomCenter,
         children: <Widget>[
-          // Positioned(
-          //   bottom: -40 - (75.0 - widget.height),
-          //   left: Directionality.of(context) == TextDirection.rtl
-          //       ? null
-          //       : _pos * size.width,
-          //   right: Directionality.of(context) == TextDirection.rtl
-          //       ? _pos * size.width
-          //       : null,
-          //   width: size.width / _length,
-          //   child: Center(
-          //     child: Transform.translate(
-          //       offset: Offset(
-          //         0,
-          //         -(1 - _buttonHide) * 80,
-          //       ),
-          //       child: Material(
-          //         color: widget.buttonBackgroundColor ?? widget.color,
-          //         type: MaterialType.circle,
-          //         child: Padding(
-          //           padding: const EdgeInsets.all(8.0),
-          //           child: _icon,
-          //         ),
-          //       ),
-          //     ),
-          //   ),
-          // ),
+          Positioned(
+            bottom: -40 - (75.0 - widget.height),
+            left: Directionality.of(context) == TextDirection.rtl
+                ? null
+                : _pos * size.width,
+            right: Directionality.of(context) == TextDirection.rtl
+                ? _pos * size.width
+                : null,
+            width: size.width / _length,
+            child: Center(
+              child: Transform.translate(
+                offset: Offset(
+                  0,
+                  -(1 - _buttonHide) * 80,
+                ),
+                child: Material(
+                  color: widget.buttonBackgroundColor ?? widget.color,
+                  type: MaterialType.circle,
+                  elevation: 5,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: _icon,
+                  ),
+                ),
+              ),
+            ),
+          ),
           Positioned(
             left: 0,
             right: 0,
