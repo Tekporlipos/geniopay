@@ -10,6 +10,9 @@ class FunctionWidgets{
   static Widget normalText(String text,double size,Color colors){
     return Text(text,style:  TextStyle(fontFamily: "IBM_Plex_Sans_medium", color: colors,fontWeight: FontWeight.normal,fontSize: size),);
   }
+  static Widget normalTextCenter(String text,double size,Color colors){
+    return Center(child: Text(text,style:  TextStyle(fontFamily: "IBM_Plex_Sans_medium", color: colors,fontWeight: FontWeight.normal,fontSize: size),textAlign: TextAlign.center,));
+  }
   static Widget boldText(String text,double size,Color colors){
     return Text(text,style:  TextStyle(fontFamily: "IBM_Plex_Sans_bold", color: colors,fontWeight: FontWeight.bold,fontSize: size),);
   }

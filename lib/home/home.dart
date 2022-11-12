@@ -137,7 +137,12 @@ class Home extends GetView<HomeController>{
                                 Get.toNamed(Pages.exchange);
                               },
                               child: FunctionWidgets.svgInCircle("assets/images/home/Wallet.svg","Exchange")),
-                          FunctionWidgets.svgInCircle("assets/images/home/Category.svg","More"),
+                          InkWell(
+                              onTap: (){
+                                Get.toNamed(Pages.plans);
+                              },
+                              child: FunctionWidgets.svgInCircle("assets/images/home/Category.svg","More"),),
+
                         ],
                       ),
                       const SizedBox(height: 30,),
