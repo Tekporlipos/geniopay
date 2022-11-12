@@ -14,8 +14,8 @@ class FunctionWidgets{
     return Text(text,style:  TextStyle(fontFamily: "IBM_Plex_Sans_bold", color: colors,fontWeight: FontWeight.bold,fontSize: size),);
   }
 
-  static Widget smallTextUnderline(String text,double size,Color colors){
-    return Text(text,style:  TextStyle(fontFamily: "IBM_Plex_Sans", color: colors,fontWeight: FontWeight.w500,fontSize: size,decoration: TextDecoration.underline),);
+  static Widget smallTextUnderline(String text,double size,Color colors,TextDecoration decoration){
+    return Text(text,style:  TextStyle(fontFamily: "IBM_Plex_Sans", color: colors,fontWeight: FontWeight.w500,fontSize: size,decoration: decoration),);
   }
 
 
@@ -43,6 +43,7 @@ class FunctionWidgets{
                         color: Constants.primary,
                         image: DecorationImage(
                           image: AssetImage(logo),
+                          fit: BoxFit.cover
                         )
                     ),
                   )
@@ -136,5 +137,62 @@ class FunctionWidgets{
     );
   }
 
+  
+ static Widget customOpCard(String logo,Widget title,Widget message,String state,String old){
+    return  Container(
+      padding: const EdgeInsets.only(left: 16,right: 16,top: 18,bottom: 18),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(18),
+        color: Colors.white,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Row(
+            children: [
+              Padding(
+                  padding: const EdgeInsets.only(right: 16.0),
+                  child:Container(
+                    width: 40,
+                    height: 40,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadiusDirectional.circular(40/2),
+                        color: Constants.primary,
+                        image:  DecorationImage(
+                            image: AssetImage(logo),
+                            fit: BoxFit.cover
+                        )
+                    ),
+                  )
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  title,
+                  message,
+                ],
+              )
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                children: [
+                  FunctionWidgets.boldText(state,15,Constants.secondary),
+                  FunctionWidgets.smallTextUnderline(old,13,Colors.black87,TextDecoration.lineThrough)
+                ],
+              ),
+              const SizedBox(width: 10,),
+              const Icon(Icons.play_arrow,color: Constants.secondary,),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+  
 
 }

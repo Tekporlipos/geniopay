@@ -1,6 +1,7 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:geniopay/utility/pages.dart';
 import 'package:get/get.dart';
 
 import '../utility/constants.dart';
@@ -131,7 +132,11 @@ class Home extends GetView<HomeController>{
                         children: [
                           FunctionWidgets.svgInCircle("assets/images/home/Arrow - Right Square.svg","Pay out"),
                           FunctionWidgets.svgInCircle("assets/images/home/Login.svg","Pay in"),
-                          FunctionWidgets.svgInCircle("assets/images/home/Wallet.svg","Exchange"),
+                          InkWell(
+                              onTap: (){
+                                Get.toNamed(Pages.exchange);
+                              },
+                              child: FunctionWidgets.svgInCircle("assets/images/home/Wallet.svg","Exchange")),
                           FunctionWidgets.svgInCircle("assets/images/home/Category.svg","More"),
                         ],
                       ),
@@ -179,7 +184,7 @@ class Home extends GetView<HomeController>{
                    children: [
                      FunctionWidgets.normalText("Transactions", 15, Colors.black),
 
-                     FunctionWidgets.smallTextUnderline("View All", 12, Colors.black54),
+                     FunctionWidgets.smallTextUnderline("View All", 12, Colors.black54,TextDecoration.underline),
                    ],
                  ),
                ),

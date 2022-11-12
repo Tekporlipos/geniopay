@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import 'home/Home.dart';
+import 'exchange/exchange.dart';
+import 'home/home.dart';
 import 'utility/constants.dart';
+import 'utility/pages.dart';
 void main() {
-  runApp(GetMaterialApp(
+  runApp(
+      GetMaterialApp(
     theme: ThemeData(primaryColor: Constants.primary,primaryColorDark: Constants.secondaryLight,primaryColorLight:Constants.secondaryLighter,secondaryHeaderColor: Constants.secondary ),
-    initialRoute: "/",
+    initialRoute: Pages.home,
     getPages: [
-      GetPage(name: '/', page: ()=> const Home()),
+      GetPage(name: Pages.home, page: ()=> const Home()),
+      GetPage(name: Pages.exchange, page: ()=> const Exchange()),
     ],
   ));
 }
