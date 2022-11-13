@@ -78,12 +78,27 @@ flutter:
     - assets/images/home/Category.svg
     - assets/images/home/group.png
     - assets/images/home/Login.svg
-    - assets/images/home/Show.svg
     - assets/images/home/spotify.png
     - assets/images/home/Vector.svg
     - assets/images/home/Verde Sencillo Educación.png
     - assets/images/home/Wallet.svg
     - assets/images/registration/add.svg
+    - assets/images/home/notification.svg
+    - assets/images/home/star.svg
+    - assets/images/registration/carbon_calendar-add.svg
+    - assets/images/registration/united states.png
+    - assets/images/registration/play.svg
+    - assets/images/registration/method.svg
+    - assets/images/registration/fly.svg
+    - assets/images/registration/logos_mastercard.svg
+    - assets/images/registration/mess.svg
+    - assets/images/registration/tag.svg
+    - assets/images/logo_dark.svg
+    - assets/images/registration/receiver.png
+    - assets/images/registration/bx_camera_movie.svg
+    - assets/images/registration/bx_home_heart.svg
+    - assets/images/registration/bx_id_card.svg
+    - assets/images/registration/b.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

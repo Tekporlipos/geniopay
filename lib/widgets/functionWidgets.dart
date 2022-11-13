@@ -5,22 +5,46 @@ import '../utility/constants.dart';
 
 class FunctionWidgets{
   static Widget smallText(String text,double size,Color colors){
-    return Text(text,style:  TextStyle(fontFamily: "IBM_Plex_Sans", color: colors,fontWeight: FontWeight.w500,fontSize: size),);
+    return Text(text,style:  TextStyle(fontFamily: "IBM_Plex_Sans", color: colors,fontWeight: FontWeight.w300,fontSize: size),);
   }
   static Widget normalText(String text,double size,Color colors,FontWeight fontWeight){
     return Text(text,style:  TextStyle(fontFamily: "IBM_Plex_Sans", color: colors,fontWeight: fontWeight,fontSize: size,),);
   }
-  static Widget normalTextCenter(String text,double size,Color colors){
-    return Center(child: Text(text,style:  TextStyle(fontFamily: "IBM_Plex_Sans_medium", color: colors,fontWeight: FontWeight.normal,fontSize: size),textAlign: TextAlign.center,));
-  }
-  static Widget boldText(String text,double size,Color colors){
-    return Text(text,style:  TextStyle(fontFamily: "IBM_Plex_Sans_bold", color: colors,fontWeight: FontWeight.bold,fontSize: size),);
+
+  static Widget normalTextCenter(String text,double size,Color colors,FontWeight fontWeight){
+    return Text(text,style:  TextStyle(fontFamily: "IBM_Plex_Sans", color: colors,fontWeight: fontWeight,fontSize: size,),textAlign: TextAlign.center,);
   }
 
+  static Widget active(){
+    return Padding(
+      padding: const EdgeInsets.only(left: 4.0,right: 4.0),
+      child: Container(
+        width: 12,
+        height: 12,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadiusDirectional.circular(6),
+            color: Constants.secondary
+        ),
+      ),
+    );
+  }
 
+  static Widget inActive(){
+    return Padding(
+      padding: const EdgeInsets.only(left: 4.0,right: 4.0),
+      child: Container(
+        width: 8,
+        height: 8,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadiusDirectional.circular(4),
+            color:const Color.fromRGBO(0, 138, 167, 0.3),
+        ),
+      ),
+    );
+  }
 
   static Widget smallTextUnderline(String text,double size,Color colors,TextDecoration decoration){
-    return Text(text,style:  TextStyle(fontFamily: "IBM_Plex_Sans", color: colors,fontWeight: FontWeight.w500,fontSize: size,decoration: decoration),);
+    return Text(text,style:  TextStyle(fontFamily: "IBM_Plex_Sans", color: colors,fontWeight: FontWeight.w400,fontSize: size,decoration: decoration),);
   }
 
   static Widget customCheckBox(bool checked){
@@ -48,18 +72,15 @@ class FunctionWidgets{
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Padding(
-          padding: const EdgeInsets.only(right: 16.0,left: 8),
+          padding: const EdgeInsets.only(right: 16.0,),
           child: Container(
-            width: 44,
-            height: 44,
+            width: 36,
+            height: 36,
             decoration: BoxDecoration(
-                borderRadius: BorderRadiusDirectional.circular(44/2),
+                borderRadius: BorderRadiusDirectional.circular(36/2),
                 color: Constants.primary,
-                image:  DecorationImage(
-                    image: AssetImage(svg),
-                    fit: BoxFit.cover
-                )
             ),
+            child: Center(child: SvgPicture.asset(svg),),
           ),
         ),
         Expanded(
@@ -68,8 +89,8 @@ class FunctionWidgets{
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              FunctionWidgets.normalText(message, 15, Colors.black87,FontWeight.w700),
-              FunctionWidgets.smallTextUnderline("Learn more", 15, Constants.secondary, TextDecoration.underline)
+              FunctionWidgets.normalText(message, 16, Constants.lightenText,FontWeight.w400),
+              FunctionWidgets.smallTextUnderline("Learn more", 16, Constants.secondary, TextDecoration.underline)
             ],
           ),
         ),
@@ -85,19 +106,19 @@ class FunctionWidgets{
       Color color,
       String logo){
     return Padding(
-      padding: const EdgeInsets.only(top: 8.0,left: 16,right: 16, bottom: 8),
+      padding: const EdgeInsets.only(top: 8.0,left: 24,right: 24, bottom: 8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(
             children: [
               Padding(
-                  padding: const EdgeInsets.only(right: 8.0),
+                  padding: const EdgeInsets.only(right: 16.0),
                   child: Container(
-                    width: 44,
-                    height: 44,
+                    width: 40,
+                    height: 40,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadiusDirectional.circular(44/2),
+                        borderRadius: BorderRadiusDirectional.circular(40/2),
                         color: Constants.primary,
                         image: DecorationImage(
                           image: AssetImage(logo),
@@ -110,8 +131,9 @@ class FunctionWidgets{
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  FunctionWidgets.normalText(name,18,Colors.black87,FontWeight.w700),
-                  FunctionWidgets.smallText(date,13,Colors.black38),
+                  FunctionWidgets.normalText(name,13,Constants.title,FontWeight.w400),
+                  Opacity(opacity: 0.5,
+                  child: FunctionWidgets.normalText(date,10,Constants.lighten,FontWeight.w100)),
                 ],
               )
             ],
@@ -120,8 +142,9 @@ class FunctionWidgets{
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              FunctionWidgets.normalText(amount, 15, Colors.black54,FontWeight.w700),
-              FunctionWidgets.smallText(state, 12, color),
+              FunctionWidgets.normalText(amount, 14, Constants.lighten,FontWeight.w400),
+              Opacity( opacity: 0.5,
+              child: FunctionWidgets.normalText(state, 10, color,FontWeight.w400)),
             ],)
         ],
       ),
@@ -139,12 +162,12 @@ class FunctionWidgets{
               color: Constants.secondary
           ),
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(14.0),
             child: SvgPicture.asset(svg),
           ),
         ),
-        const SizedBox(height: 5,),
-        normalText(text, 12, Constants.secondary,FontWeight.w700)
+        const SizedBox(height: 4,),
+        normalText(text, 12, Constants.secondary,FontWeight.w400)
       ],
     );
   }
@@ -175,16 +198,16 @@ class FunctionWidgets{
       child: Card(
         color: color,
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.only(left: 15.0,top: 19,bottom: 19,right: 19),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  FunctionWidgets.boldText(title, 15, Colors.white),
-                  const SizedBox(height: 5,),
-                  FunctionWidgets.smallText(message, 12, Colors.white),
+                  FunctionWidgets.normalText(title, 14, Colors.white,FontWeight.w500),
+                  const SizedBox(height: 4,),
+                  FunctionWidgets.normalText(message, 10, Colors.white,FontWeight.w300),
                 ],
               ),
               Image.asset(image),
@@ -196,11 +219,11 @@ class FunctionWidgets{
   }
 
   
- static Widget customOpCard(String logo,Widget title,Widget message,String state,String old){
+ static Widget customOpCard(Widget logo,Widget title,Widget message,String state,String old){
     return  Container(
       padding: const EdgeInsets.only(left: 16,right: 16,top: 18,bottom: 18),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(18),
+        borderRadius: BorderRadius.circular(20),
         color: Colors.white,
       ),
       child: Row(
@@ -217,11 +240,8 @@ class FunctionWidgets{
                     decoration: BoxDecoration(
                         borderRadius: BorderRadiusDirectional.circular(40/2),
                         color: Constants.primary,
-                        image:  DecorationImage(
-                            image: AssetImage(logo),
-                            fit: BoxFit.cover
-                        )
                     ),
+                    child: Center(child: logo,),
                   )
               ),
               Column(
@@ -229,6 +249,7 @@ class FunctionWidgets{
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   title,
+                  const SizedBox(height: 4,),
                   message,
                 ],
               )
@@ -239,12 +260,13 @@ class FunctionWidgets{
             children: [
               Column(
                 children: [
-                  FunctionWidgets.boldText(state,15,Constants.secondary),
-                  FunctionWidgets.smallTextUnderline(old,13,Colors.black87,TextDecoration.lineThrough)
+                  FunctionWidgets.normalText(state,12,Constants.secondary,FontWeight.w300),
+                  Opacity(opacity: 0.6,
+                  child: FunctionWidgets.smallTextUnderline(old,12,Constants.title,TextDecoration.lineThrough))
                 ],
               ),
               const SizedBox(width: 10,),
-              const Icon(Icons.play_arrow,color: Constants.secondary,),
+               SvgPicture.asset("assets/images/registration/play.svg"),
             ],
           )
         ],

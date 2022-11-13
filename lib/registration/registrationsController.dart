@@ -9,10 +9,8 @@ class RegistrationController extends GetxController{
   final now = DateTime.now();
 
   void register(){
-    print("here");
     if(declaration.value && fatca.value == "taxed" && tin.value.isNotEmpty){
       Get.toNamed(Pages.home);
-      print("here in");
     }else{
       Get.snackbar("Not Authorize", "You do not qualify for this service",snackPosition: SnackPosition.BOTTOM);
     }

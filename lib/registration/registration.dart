@@ -129,8 +129,8 @@ class Registration extends GetView<RegistrationController>{
                     border: InputBorder.none,
                     labelText: 'Enter TIN',
                     contentPadding:
-                    EdgeInsets.all(8),
-                    labelStyle: TextStyle(color: Colors.black54)
+                    EdgeInsets.only(left: 8),
+                    labelStyle: TextStyle(color: Colors.black87,fontWeight: FontWeight.w300,fontSize: 14,fontFamily: "IBM_Plex_Sans")
                 ),
               ),
             ),
@@ -138,7 +138,7 @@ class Registration extends GetView<RegistrationController>{
           const SizedBox(height: 5,),
           Padding(
             padding: const EdgeInsets.only(right: 24.0),
-            child: Align(alignment: Alignment.centerRight,child: SvgPicture.asset("assets/images/registration/bin.svg",width: 13,height: 13,),),
+            child: Align(alignment: Alignment.centerRight,child: SvgPicture.asset("assets/images/registration/bin.svg",width: 16,height: 16,),),
           ),
           const SizedBox(height: 17,),
           Column(
@@ -148,9 +148,9 @@ class Registration extends GetView<RegistrationController>{
                 height: 40,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadiusDirectional.circular(40/2),
-                    color: Constants.secondaryLighter,
+                    color: Constants.primary,
                 ),
-                child:  Center(child: SvgPicture.asset("assets/images/registration/add.svg",width: 13,height: 13,),),
+                child:  Center(child: SvgPicture.asset("assets/images/registration/add.svg",width: 16,height: 16,),),
               ),
               const SizedBox(height: 8,),
               FunctionWidgets.normalText("Add another country", 14, Colors.black,FontWeight.w300),
@@ -284,7 +284,7 @@ class Registration extends GetView<RegistrationController>{
           Align( alignment: Alignment.center,child: FunctionWidgets.normalText("Date: ${controller.now.toString().substring(0,10)}", 16, Constants.secondary,FontWeight.w600)),
           const SizedBox(height: 30,),
           Padding(
-            padding: const EdgeInsets.only(left: 16.0,right: 16),
+            padding: const EdgeInsets.only(left: 24.0,right: 24),
             child: InkWell(
               onTap: (){
                 controller.register();

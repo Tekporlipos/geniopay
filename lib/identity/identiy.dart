@@ -28,51 +28,56 @@ class Identity extends GetView<IdentityController>{
           ),
         ],
       ),
-      body: ListView(
+      body: Column(
         children: [
-          const SizedBox(height: 30,),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: RichText(
-              text: const TextSpan(
-                text: 'We need to verify \nyour',
-                style: TextStyle(fontFamily: "IBM_Plex_Sans_bold",fontSize: 30,fontWeight: FontWeight.bold, color: Colors.black87),
-                children: <TextSpan>[
-                  TextSpan(text: ' identity', style: TextStyle(fontFamily: "IBM_Plex_Sans_medium",fontSize: 30,fontWeight: FontWeight.normal, color: Colors.black87)),
-                ],
+            Expanded(
+              flex: 2,
+              child: Padding(
+              padding: const EdgeInsets.only(left: 24.0,right:24,bottom: 30),
+              child: Align(
+                alignment: Alignment.bottomLeft,
+                child: RichText(
+                  text: const TextSpan(
+                    text: 'We need to verify \nyour',
+                    style: TextStyle(fontFamily: "IBM_Plex_Sans",fontSize: 30,fontWeight: FontWeight.w600, color: Colors.black),
+                    children: <TextSpan>[
+                      TextSpan(text: ' identity', style: TextStyle(fontFamily: "IBM_Plex_Sans",fontSize: 30,fontWeight: FontWeight.w400, color: Colors.black)),
+                    ],
+                  ),
+                ),
+              ),
               ),
             ),
-          ),
-          const SizedBox(height: 30,),
           Expanded(
+            flex: 7,
             child: Container(
               decoration: const BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.only(topLeft: Radius.circular(20),topRight: Radius.circular(20)),
+                borderRadius: BorderRadius.only(topLeft: Radius.circular(40),topRight: Radius.circular(40)),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.only(left: 24.0,right: 24),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const SizedBox(height: 10,),
-                    FunctionWidgets.identityMes("assets/images/home/group.png", "Valid Government Issued ID Document Scan", (){}),
-                    const SizedBox(height: 20,),
-                    FunctionWidgets.identityMes("assets/images/home/group.png", "Proof of Residence Document Scan", (){}),
-                    const SizedBox(height: 20,),
-                    FunctionWidgets.identityMes("assets/images/home/group.png", "We will ask you to record a short video of yourself using the app", (){}),
+                    const SizedBox(height: 30,),
+                    FunctionWidgets.identityMes("assets/images/registration/bx_id_card.svg", "Valid Government Issued ID Document Scan", (){}),
+                    const SizedBox(height: 30,),
+                    FunctionWidgets.identityMes("assets/images/registration/bx_home_heart.svg", "Proof of Residence Document Scan", (){}),
+                    const SizedBox(height: 30,),
+                    FunctionWidgets.identityMes("assets/images/registration/bx_camera_movie.svg", "We will ask you to record a short video of yourself using the app", (){}),
                     const SizedBox(height: 40,),
-                    FunctionWidgets.normalTextCenter("Please prepare documents mentioned above!", 18, Constants.secondary),
+                    FunctionWidgets.normalTextCenter("Please prepare documents \nmentioned above!", 18, Constants.secondary,FontWeight.w600),
                     const SizedBox(height: 20,),
-                    FunctionWidgets.normalTextCenter("There may be rare situations where we would require your to upload additional documents.", 13, Constants.secondary),
+                    FunctionWidgets.normalTextCenter("There may be rare situations where we would require your to upload additional documents.", 14, Constants.secondary,FontWeight.w400),
                     const SizedBox(height: 30,),
                     Container(
-                      padding: const EdgeInsets.all(8),
+                      padding: const EdgeInsets.all(24),
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(8),
                         color: Constants.yellow,
                       ),
-                      child:Center(child: FunctionWidgets.boldText("CONTINUE",18,Colors.black)),
+                      child:Center(child: FunctionWidgets.normalText("CONTINUE",14,Colors.black,FontWeight.w600)),
                     ),
                     const SizedBox(height: 10,),
                   ],

@@ -11,11 +11,11 @@ void main() {
   runApp(
       GetMaterialApp(
     theme: ThemeData(primaryColor: Constants.primary,primaryColorDark: Constants.secondaryLight,primaryColorLight:Constants.secondaryLighter,secondaryHeaderColor: Constants.secondary ),
-    initialRoute: Pages.registration,
+    initialRoute: Pages.plans,
     getPages: [
-      // GetPage(name: Pages.home, page: ()=> const Home()),
-      // GetPage(name: Pages.exchange, page: ()=> const Exchange()),
-      // GetPage(name: Pages.plans, page: ()=> const Plans()),
+      GetPage(name: Pages.home, page: ()=> const Home()),
+      GetPage(name: Pages.exchange, page: ()=> const Exchange()),
+      GetPage(name: Pages.plans, page: ()=> const Plans()),
       GetPage(name: Pages.identity, page: ()=> const Identity()),
       GetPage(name: Pages.registration, page: ()=> const Registration()),
     ],

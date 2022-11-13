@@ -8,6 +8,7 @@ class Constants{
   static const title = Color.fromRGBO(0, 27, 33, 1);
   static const light = Color.fromRGBO(44, 44, 46, 1);
   static const lighten = Color.fromRGBO(43, 65, 70, 1);
+  static const lightenText = Color.fromRGBO(67, 67, 67, 1);
   static const secondaryLight = Color.fromRGBO(17, 122, 250, 1);
   static const secondaryLighter = Color.fromRGBO(0, 138, 167, 0.3);
   static const secondaryLighterFade = Color.fromRGBO(192, 232, 241, 0.3);

@@ -119,7 +119,8 @@ class CurvedNavigationBarState extends State<CurvedNavigationBar>
                 child: Material(
                   color: widget.buttonBackgroundColor ?? widget.color,
                   type: MaterialType.circle,
-                  elevation: 5,
+                  shadowColor: Colors.grey,
+                  elevation: 8,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: _icon,
@@ -174,11 +175,11 @@ class CurvedNavigationBarState extends State<CurvedNavigationBar>
       widget.onTap!(index);
     }
     final newPosition = index / _length;
-    // setState(() {
-    //   _startingPos = _pos;
-    //   _endingIndex = index;
-    //   _animationController.animateTo(newPosition,
-    //       duration: widget.animationDuration, curve: widget.animationCurve);
-    // });
+    setState(() {
+      _startingPos = _pos;
+      _endingIndex = index;
+      _animationController.animateTo(newPosition,
+          duration: widget.animationDuration, curve: widget.animationCurve);
+    });
   }
 }
