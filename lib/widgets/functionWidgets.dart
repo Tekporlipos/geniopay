@@ -17,10 +17,65 @@ class FunctionWidgets{
     return Text(text,style:  TextStyle(fontFamily: "IBM_Plex_Sans_bold", color: colors,fontWeight: FontWeight.bold,fontSize: size),);
   }
 
+
+
   static Widget smallTextUnderline(String text,double size,Color colors,TextDecoration decoration){
     return Text(text,style:  TextStyle(fontFamily: "IBM_Plex_Sans", color: colors,fontWeight: FontWeight.w500,fontSize: size,decoration: decoration),);
   }
 
+  static Widget customCheckBox(bool checked){
+    return Container(
+      width: 35,
+      height: 35,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: Constants.secondary,width: 2)
+      ),
+      child:  Center(child: checked
+          ? const Icon(
+        Icons.check,
+        size: 30.0,
+        color: Constants.secondary,
+      )
+          : const SizedBox(),
+      ),
+    );
+  }
+
+
+  static Widget identityMes(String svg,String message,Function function){
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(right: 16.0,left: 8),
+          child: Container(
+            width: 44,
+            height: 44,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadiusDirectional.circular(44/2),
+                color: Constants.primary,
+                image:  DecorationImage(
+                    image: AssetImage(svg),
+                    fit: BoxFit.cover
+                )
+            ),
+          ),
+        ),
+        Expanded(
+          flex:4,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              FunctionWidgets.normalText(message, 15, Colors.black87),
+              FunctionWidgets.smallTextUnderline("Learn more", 15, Constants.secondary, TextDecoration.underline)
+            ],
+          ),
+        ),
+      ],
+    );
+  }
 
   static Widget transactions(
       String name,

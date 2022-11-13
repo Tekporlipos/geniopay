@@ -130,8 +130,18 @@ class Home extends GetView<HomeController>{
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          FunctionWidgets.svgInCircle("assets/images/home/Arrow - Right Square.svg","Pay out"),
-                          FunctionWidgets.svgInCircle("assets/images/home/Login.svg","Pay in"),
+
+                          InkWell(
+                            onTap: (){
+                              Get.toNamed(Pages.registration);
+                            },
+                            child: FunctionWidgets.svgInCircle("assets/images/home/Arrow - Right Square.svg","Pay out"),),
+                          InkWell(
+                              onTap: (){
+                                Get.toNamed(Pages.identity);
+                              },
+                              child:FunctionWidgets.svgInCircle("assets/images/home/Login.svg","Pay in"),),
+
                           InkWell(
                               onTap: (){
                                 Get.toNamed(Pages.exchange);
