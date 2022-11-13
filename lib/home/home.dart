@@ -22,10 +22,10 @@ class Home extends GetView<NavBarController>{
 
     Get.put(NavBarController());
     
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Constants.primary,
-        body: Stack(
+    return Scaffold(
+      backgroundColor: Constants.primary,
+      body: SafeArea(
+        child: Stack(
           children: [
             Obx(() => pages[controller.page.value]),
             const NavBar(),

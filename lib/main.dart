@@ -11,7 +11,7 @@ void main() {
   runApp(
       GetMaterialApp(
     theme: ThemeData(primaryColor: Constants.primary,primaryColorDark: Constants.secondaryLight,primaryColorLight:Constants.secondaryLighter,secondaryHeaderColor: Constants.secondary ),
-    initialRoute: Pages.plans,
+    initialRoute: Pages.registration,
     getPages: [
       GetPage(name: Pages.home, page: ()=> const Home()),
       GetPage(name: Pages.exchange, page: ()=> const Exchange()),

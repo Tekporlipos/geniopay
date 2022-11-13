@@ -203,7 +203,7 @@ class Registration extends GetView<RegistrationController>{
             padding: const EdgeInsets.only(left: 24.0,right: 24),
             child: Container(
               height: 1,
-              width: Get.width-32,
+              width: Get.width,
               color: Constants.primary,
             ),
           ),
@@ -289,8 +289,11 @@ class Registration extends GetView<RegistrationController>{
               onTap: (){
                 controller.register();
               },
+
+
+
               child: Obx(()=>Container(
-                padding: const EdgeInsets.all(8),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   color: controller.declaration.value?Constants.secondary:Constants.primary,

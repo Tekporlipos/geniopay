@@ -28,7 +28,7 @@ class Identity extends GetView<IdentityController>{
           ),
         ],
       ),
-      body: Column(
+      body: ListView(
         children: [
             Expanded(
               flex: 2,
@@ -72,14 +72,14 @@ class Identity extends GetView<IdentityController>{
                     FunctionWidgets.normalTextCenter("There may be rare situations where we would require your to upload additional documents.", 14, Constants.secondary,FontWeight.w400),
                     const SizedBox(height: 30,),
                     Container(
-                      padding: const EdgeInsets.all(24),
+                      padding: const EdgeInsets.all(11),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
                         color: Constants.yellow,
                       ),
                       child:Center(child: FunctionWidgets.normalText("CONTINUE",14,Colors.black,FontWeight.w600)),
                     ),
-                    const SizedBox(height: 10,),
+                    const SizedBox(height: 30,),
                   ],
                 ),
               ),

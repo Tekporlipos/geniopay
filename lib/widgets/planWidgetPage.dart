@@ -18,7 +18,6 @@ static  Widget plansPager(String type){
           child: Align(
             alignment: Alignment.center,
             child: Container(
-              height: Get.height-300,
               padding: const EdgeInsets.all(24),
               child: Column(
                 children: [

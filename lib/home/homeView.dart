@@ -13,150 +13,157 @@ class HomeView extends GetView<HomeController>{
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(top: 8.0,left: 24,right: 24, bottom: 34),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(right: 8.0),
-                    child: BorderGradiant.borderGradiant(
-                        Padding(
-                          padding: const EdgeInsets.all(2.0),
-                          child: ClipOval(child: Image.asset("assets/images/home/profile.png",width: 48,height: 48,fit: BoxFit.cover,),),
-                        ),27),
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+    return Scaffold(
+      backgroundColor: Constants.primary,
+      body: Stack(
+        children: [
+          SizedBox(
+            width: Get.width,
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 8.0,left: 24,right: 24, bottom: 34),
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      FunctionWidgets.normalText("Good Morning",12,Constants.secondary,FontWeight.w500),
-                      FunctionWidgets.normalText("New Genius",18,Constants.secondary,FontWeight.w700),
-                    ],
-                  )
-                ],
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      SvgPicture.asset("assets/images/home/Vector.svg"),
-                      Padding(
-                          padding: const EdgeInsets.only(left: 5.0,right: 5),
-                          child: FunctionWidgets.barge(SvgPicture.asset("assets/images/home/notification.svg"), 2)
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(right: 8.0),
+                            child: BorderGradiant.borderGradiant(
+                                Padding(
+                                  padding: const EdgeInsets.all(2.0),
+                                  child: ClipOval(child: Image.asset("assets/images/home/profile.png",width: 48,height: 48,fit: BoxFit.cover,),),
+                                ),27),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              FunctionWidgets.normalText("Good Morning",12,Constants.secondary,FontWeight.w500),
+                              FunctionWidgets.normalText("New Genius",18,Constants.secondary,FontWeight.w700),
+                            ],
+                          )
+                        ],
                       ),
-                      const Icon(Icons.help_outline,color: Constants.secondary,size: 24,),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              SvgPicture.asset("assets/images/home/Vector.svg"),
+                              Padding(
+                                  padding: const EdgeInsets.only(left: 5.0,right: 5),
+                                  child: FunctionWidgets.barge(SvgPicture.asset("assets/images/home/notification.svg"), 2)
+                              ),
+                              const Icon(Icons.help_outline,color: Constants.secondary,size: 24,),
+                            ],
+                          ),
+                          const SizedBox(height: 5,),
+                          Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(right: 4.0, top: 2),
+                                child: FunctionWidgets.normalText("10 000",12,Constants.secondary,FontWeight.w600),
+                              ),
+                              SvgPicture.asset("assets/images/home/star.svg"),
+                            ],
+                          )
+                        ],)
                     ],
                   ),
-                  const SizedBox(height: 5,),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(right: 4.0, top: 2),
-                        child: FunctionWidgets.normalText("10 000",12,Constants.secondary,FontWeight.w600),
-                      ),
-                      SvgPicture.asset("assets/images/home/star.svg"),
-                    ],
-                  )
-                ],)
-            ],
-          ),
-        ),
-
-
-        Padding(
-          padding: const EdgeInsets.only(left: 24.0,right: 24),
-          child: BorderGradiant.borderGradiant(
-              Padding(
-                padding: const EdgeInsets.only(left: 16.0,right: 16, bottom: 16,top: 27),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        const SizedBox(),
-                        FunctionWidgets.normalText("Total Balance", 14,const Color.fromRGBO(0, 138, 167, 0.6),FontWeight.w300),
-                        const Icon(Icons.remove_red_eye_outlined,color: Constants.secondary,),
-                      ],
-                    ),
-                    const SizedBox(height: 4,),
-                    FunctionWidgets.normalText("\$450.49", 44, Constants.secondary,FontWeight.w600),
-                    const SizedBox(height: 24,),
-
-                    Container(
-                      height: 20,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Constants.secondaryLighter,
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 6.0,right: 6),
-                        child: DropdownButton(
-                          icon: SvgPicture.asset("assets/images/registration/Arrow-Down2.svg"),
-                          alignment: AlignmentDirectional.center,
-                          dropdownColor: Constants.primary,
-                          underline: const SizedBox(),
-                          items: [
-                            DropdownMenuItem(
-                              onTap: (){},
-                              child: FunctionWidgets.normalText("USD", 12, Constants.secondary,FontWeight.w300),
-                            )
-                          ], onChanged: (value){},
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 16,),
-                    SizedBox(child: Container(
-                      height: 2,
-                      color: const Color.fromRGBO(0, 138, 167, 0.1),
-                    ),),
-                    const SizedBox(height: 16,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-
-                        InkWell(
-                          onTap: (){
-                            Get.snackbar("Error", "Function not implemented",snackPosition: SnackPosition.BOTTOM);
-                          },
-                          child: FunctionWidgets.svgInCircle("assets/images/home/Arrow - Right Square.svg","Pay out"),),
-                        InkWell(
-                          onTap: (){
-                            Get.toNamed(Pages.identity);
-                          },
-                          child:FunctionWidgets.svgInCircle("assets/images/home/Login.svg","Pay in"),),
-
-                        InkWell(
-                            onTap: (){
-                              Get.toNamed(Pages.exchange);
-                            },
-                            child: FunctionWidgets.svgInCircle("assets/images/home/Wallet.svg","Exchange")),
-                        InkWell(
-                          onTap: (){
-                            Get.toNamed(Pages.plans);
-                          },
-                          child: FunctionWidgets.svgInCircle("assets/images/home/Category.svg","More"),),
-
-                      ],
-                    ),
-                  ],
                 ),
-              ), 30),
-        ),
-        const SizedBox(height: 14,),
-        Expanded(
-          child: DraggableScrollableSheet(
-            initialChildSize: 0.95,
+                Padding(
+                  padding: const EdgeInsets.only(left: 24.0,right: 24),
+                  child: BorderGradiant.borderGradiant(
+                      Padding(
+                        padding: const EdgeInsets.only(left: 16.0,right: 16, bottom: 16,top: 27),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                const SizedBox(),
+                                FunctionWidgets.normalText("Total Balance", 14,const Color.fromRGBO(0, 138, 167, 0.6),FontWeight.w300),
+                                const Icon(Icons.remove_red_eye_outlined,color: Constants.secondary,),
+                              ],
+                            ),
+                            const SizedBox(height: 4,),
+                            FunctionWidgets.normalText("\$450.49", 44, Constants.secondary,FontWeight.w600),
+                            const SizedBox(height: 24,),
+
+                            Container(
+                              height: 20,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Constants.secondaryLighter,
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 6.0,right: 6),
+                                child: DropdownButton(
+                                  icon: SvgPicture.asset("assets/images/registration/Arrow-Down2.svg"),
+                                  alignment: AlignmentDirectional.center,
+                                  dropdownColor: Constants.primary,
+                                  underline: const SizedBox(),
+                                  items: [
+                                    DropdownMenuItem(
+                                      onTap: (){},
+                                      child: FunctionWidgets.normalText("USD", 12, Constants.secondary,FontWeight.w300),
+                                    )
+                                  ], onChanged: (value){},
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 16,),
+                            SizedBox(child: Container(
+                              height: 2,
+                              color: const Color.fromRGBO(0, 138, 167, 0.1),
+                            ),),
+                            const SizedBox(height: 16,),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+
+                                InkWell(
+                                  onTap: (){
+                                    Get.snackbar("Error", "Function not implemented",snackPosition: SnackPosition.BOTTOM,backgroundColor: Constants.bg);
+                                  },
+                                  child: FunctionWidgets.svgInCircle("assets/images/home/Arrow - Right Square.svg","Pay out"),),
+                                InkWell(
+                                  onTap: (){
+                                    Get.toNamed(Pages.identity);
+                                  },
+                                  child:FunctionWidgets.svgInCircle("assets/images/home/Login.svg","Pay in"),),
+
+                                InkWell(
+                                    onTap: (){
+                                      Get.toNamed(Pages.exchange);
+                                    },
+                                    child: FunctionWidgets.svgInCircle("assets/images/home/Wallet.svg","Exchange")),
+                                InkWell(
+                                  onTap: (){
+                                    Get.toNamed(Pages.plans);
+                                  },
+                                  child: FunctionWidgets.svgInCircle("assets/images/home/Category.svg","More"),),
+
+                              ],
+                            ),
+                          ],
+                        ),
+                      ), 30),
+                ),
+
+              ],
+            ),
+          ),
+
+          DraggableScrollableSheet(
+            initialChildSize: 0.4,
             builder: (BuildContext context, ScrollController scrollController) {
               return Material(
                 borderRadius:const BorderRadius.only(topLeft: Radius.circular(30),topRight: Radius.circular(30)),
@@ -219,8 +226,8 @@ class HomeView extends GetView<HomeController>{
               );
             },
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
