@@ -235,7 +235,7 @@ class Exchange extends GetView<ExchangeController>{
                   FunctionWidgets.normalText("School fees",12,Constants.title,FontWeight.w600),
                 ],
               ),
-              const Icon(Icons.play_arrow,color: Constants.secondary,),
+              SvgPicture.asset("assets/images/registration/play.svg"),
             ],
           ),
         ),

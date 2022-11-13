@@ -32,7 +32,7 @@ class Plans extends GetView<PlanController>{
       body: ListView(
         children:  [
           Padding(
-            padding: const EdgeInsets.only(left: 56,right: 56),
+            padding: const EdgeInsets.only(left: 24,right: 24),
             child: Center(child: FunctionWidgets.normalTextCenter("The more money you send, the better your insurance gets",18, Constants.secondary,FontWeight.w500)),
           ),
           const SizedBox(height: 60,),

@@ -59,6 +59,7 @@ static  Widget plansPager(String type){
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           FunctionWidgets.normalText("Accidental death,\ndismemberment, or \nparalysis", 15, Colors.black,FontWeight.w500),
+                          const SizedBox(height: 8,),
                           FunctionWidgets.smallText("(Caused by an accident)", 16, Constants.lightenText),
                         ],
                       ),
