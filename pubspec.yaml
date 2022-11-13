@@ -70,6 +70,9 @@ flutter:
     - assets/images/nav/dollar-square.svg
     - assets/images/logo.svg
     - assets/images/home/profile.png
+    - assets/images/registration/Arrow-Down2.svg
+    - assets/images/registration/brazil.png
+    - assets/images/registration/bin.svg
     - assets/images/home/al.svg
     - assets/images/home/Arrow - Right Square.svg
     - assets/images/home/Category.svg
@@ -80,6 +83,7 @@ flutter:
     - assets/images/home/Vector.svg
     - assets/images/home/Verde Sencillo Educación.png
     - assets/images/home/Wallet.svg
+    - assets/images/registration/add.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -97,15 +101,13 @@ flutter:
     - family: IBM_Plex_Sans
       fonts:
         - asset: assets/fonts/IBM_Plex_Sans/IBMPlexSans-Regular.ttf
-          style: normal
-    - family: IBM_Plex_Sans_medium
-      fonts:
         - asset: assets/fonts/IBM_Plex_Sans/IBMPlexSans-Medium.ttf
-        - asset: assets/fonts/IBM_Plex_Sans/IBMPlexSans-SemiBold.ttf
-          weight: 700
-    - family: IBM_Plex_Sans_bold
-      fonts:
         - asset: assets/fonts/IBM_Plex_Sans/IBMPlexSans-Bold.ttf
+        - asset: assets/fonts/IBM_Plex_Sans/IBMPlexSans-Thin.ttf
+        - asset: assets/fonts/IBM_Plex_Sans/IBMPlexSans-Light.ttf
+        - asset: assets/fonts/IBM_Plex_Sans/IBMPlexSans-ExtraLight.ttf
+        - asset: assets/fonts/IBM_Plex_Sans/IBMPlexSans-SemiBold.ttf
+          style: normal
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

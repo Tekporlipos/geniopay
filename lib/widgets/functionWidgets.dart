@@ -7,8 +7,8 @@ class FunctionWidgets{
   static Widget smallText(String text,double size,Color colors){
     return Text(text,style:  TextStyle(fontFamily: "IBM_Plex_Sans", color: colors,fontWeight: FontWeight.w500,fontSize: size),);
   }
-  static Widget normalText(String text,double size,Color colors){
-    return Text(text,style:  TextStyle(fontFamily: "IBM_Plex_Sans_medium", color: colors,fontWeight: FontWeight.normal,fontSize: size),);
+  static Widget normalText(String text,double size,Color colors,FontWeight fontWeight){
+    return Text(text,style:  TextStyle(fontFamily: "IBM_Plex_Sans", color: colors,fontWeight: fontWeight,fontSize: size,),);
   }
   static Widget normalTextCenter(String text,double size,Color colors){
     return Center(child: Text(text,style:  TextStyle(fontFamily: "IBM_Plex_Sans_medium", color: colors,fontWeight: FontWeight.normal,fontSize: size),textAlign: TextAlign.center,));
@@ -68,7 +68,7 @@ class FunctionWidgets{
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              FunctionWidgets.normalText(message, 15, Colors.black87),
+              FunctionWidgets.normalText(message, 15, Colors.black87,FontWeight.w700),
               FunctionWidgets.smallTextUnderline("Learn more", 15, Constants.secondary, TextDecoration.underline)
             ],
           ),
@@ -110,7 +110,7 @@ class FunctionWidgets{
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  FunctionWidgets.normalText(name,18,Colors.black87),
+                  FunctionWidgets.normalText(name,18,Colors.black87,FontWeight.w700),
                   FunctionWidgets.smallText(date,13,Colors.black38),
                 ],
               )
@@ -120,7 +120,7 @@ class FunctionWidgets{
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              FunctionWidgets.normalText(amount, 15, Colors.black54),
+              FunctionWidgets.normalText(amount, 15, Colors.black54,FontWeight.w700),
               FunctionWidgets.smallText(state, 12, color),
             ],)
         ],
@@ -144,7 +144,7 @@ class FunctionWidgets{
           ),
         ),
         const SizedBox(height: 5,),
-        normalText(text, 12, Constants.secondary)
+        normalText(text, 12, Constants.secondary,FontWeight.w700)
       ],
     );
   }
