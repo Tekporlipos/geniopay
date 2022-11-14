@@ -276,7 +276,7 @@ class Registration extends GetView<RegistrationController>{
             padding: const EdgeInsets.only(left: 24.0,right: 24),
             child: Container(
               height: 2,
-              width: Get.width-32,
+              width: Get.width,
               color: Constants.primary,
             ),
           ),

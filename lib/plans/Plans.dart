@@ -14,23 +14,23 @@ class Plans extends GetView<PlanController>{
     Get.put(PlanController());
     return Scaffold(
       backgroundColor: Constants.primary,
-      appBar: AppBar(
-        backgroundColor: Constants.primary,
-        elevation: 0,
-        leading: IconButton(onPressed: (){
-          Get.back();
-        },icon: const Icon(Icons.arrow_back,color: Colors.black,),),
-        centerTitle: true,
-        actions:  [
-          Padding(
-            padding: const EdgeInsets.only(right: 16.0),
-            child:IconButton(onPressed: (){}
-              ,icon: const Icon(Icons.help_outline,color: Colors.black,),),
-          ),
-        ],
-      ),
       body: ListView(
         children:  [
+          AppBar(
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            leading: IconButton(onPressed: (){
+              Get.back();
+            },icon: const Icon(Icons.arrow_back,color: Colors.black,),),
+            centerTitle: true,
+            actions:  [
+              Padding(
+                padding: const EdgeInsets.only(right: 16.0),
+                child:IconButton(onPressed: (){}
+                  ,icon: const Icon(Icons.help_outline,color: Colors.black,),),
+              ),
+            ],
+          ),
           Padding(
             padding: const EdgeInsets.only(left: 24,right: 24),
             child: Center(child: FunctionWidgets.normalTextCenter("The more money you send, the better your insurance gets",18, Constants.secondary,FontWeight.w500)),
